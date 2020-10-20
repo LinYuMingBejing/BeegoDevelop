@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title><<.Website>></title>
+    
+  </head>
+  <body>
+    <h1>1. 模板中綁定基本數據類型 字符串 數值 布爾值</h1>
+    <p><<.title>></p>
+    <p><<.num>></p>
+    <p><<.flag>></p>
+    <p><<.Website>></p>
+    <h1>2. 模板中綁定結構體數據</h1>
+    <p><<.article.Title>></p>
+    <p><<.article.Content>></p>
+
+    <h1>3. 模板中定義變量</h1>
+    <<$xxx := .article.Title>>
+    <<$xxx>>
+
+    <h1>4. 模板中循環遍歷 range，模擬循環切片</h1>
+    <ul>
+      <<range $key, $val := .sliceList>>
+        <li><<$key>>-----<<$val>></li>
+      <<end>>
+    </ul>
+    <h1>5. 模板中循環遍歷 range，模擬循環Map</h1>
+      <ul>
+        <<range $key, $val := .userinfo>>
+        <li>
+            <<$key>> ---- <<$val>>
+        </li>
+        <<end>>
+      </ul>
+  </body>
+</html>
