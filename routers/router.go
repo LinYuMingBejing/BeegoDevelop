@@ -2,6 +2,7 @@ package routers
 
 import (
 	"WEB/controllers"
+	"WEB/controllers/test_orm"
 
 	"github.com/astaxie/beego"
 )
@@ -41,5 +42,8 @@ func init() {
 	// 獲取cookie
 	beego.Router("/cookie/get", &controllers.CookieController{})
 	beego.Router("/cookie/set", &controllers.CookieController{}, "get:Set")
+
+	// orm
+	beego.Router("/orm", &test_orm.OrmController{})
 
 }
